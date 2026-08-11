@@ -6,5 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx:alpine
-EXPOSE 80
+RUN sed -i 's/listen       80;/listen       3000;/' /etc/nginx/conf.d/default.conf
+EXPOSE 3000
 COPY --from=builder /app/dist /usr/share/nginx/html
