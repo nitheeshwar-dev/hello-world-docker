@@ -1,15 +1,56 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  padding: 6px 14px;
+  border-radius: 999px;
   color: var(--accent);
   background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
+  border: 1px solid var(--accent-border);
+  animation: fade-in-up 0.5s ease both;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--accent), var(--accent-alt, #ff7ab8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.counter {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-alt, #ff7ab8));
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px -4px var(--accent-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-bottom: 24px;
 
+  .counter-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
   &:hover {
-    border-color: var(--accent-border);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px var(--accent-border);
+  }
+  &:active {
+    transform: translateY(0);
   }
   &:focus-visible {
     outline: 2px solid var(--accent);
@@ -17,8 +58,32 @@
   }
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero {
   position: relative;
+  animation: fade-in-up 0.6s ease 0.1s both;
 
   .base,
   .framework,

@@ -10,13 +10,16 @@ function App() {
   return (
     <>
       <section id="center">
+        <span className="badge">⚡ Vite + React, shipped with Docker</span>
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>
+            Hello, <span className="gradient-text">World</span>
+          </h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
@@ -26,6 +29,7 @@ function App() {
           className="counter"
           onClick={() => setCount((count) => count + 1)}
         >
+          <span className="counter-dot" />
           Count is {count}
         </button>
       </section>
