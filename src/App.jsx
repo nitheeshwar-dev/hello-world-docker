@@ -18,7 +18,7 @@ function App() {
         </div>
         <div>
           <h1>
-            Hello, <span className="gradient-text">Pratik, Nitheeshwar</span>
+            Hello, <span className="gradient-text">Chandra</span>
           </h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
